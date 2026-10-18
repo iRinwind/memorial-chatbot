@@ -61,6 +61,7 @@
 | :--- | :--- | :--- |
 | **数据库解密原理与 Agent 学习指南** | [`docs/DATABASE_DECRYPTION_AGENT_GUIDE.md`](docs/DATABASE_DECRYPTION_AGENT_GUIDE.md) | 深度拆解桌面端本地数据库加密原理、SQLCipher 页面结构、PBKDF2 密钥派生与 LLDB 自动化抓取脚本使用说明 |
 | **企业办公通讯软件自建机器人部署指南** | [`docs/WECOM_BOT_DEPLOY_GUIDE.md`](docs/WECOM_BOT_DEPLOY_GUIDE.md) | 手把手指导如何在企业端后台创建自建应用、获取凭证、配置 Cloudflare 隧道与开通手机微信双向收发 |
+| **Cloudflare 稳定对外服务管道搭建指南** | [`docs/CLOUDFLARE_TUNNEL_PIPELINE_GUIDE.md`](docs/CLOUDFLARE_TUNNEL_PIPELINE_GUIDE.md) | 依托 Cloudflare Zero Trust Named Tunnel 主动出站长连接，彻底解决家庭宽带动态公网 IP 变动与无公网 IP 痛点 |
 | **多模态视觉底座相册与身份锚点规范** | [`integrations/wecom_bot/visual_memory_anchor.md`](integrations/wecom_bot/visual_memory_anchor.md) | 如何用 3~5 张老照片建立亲人视觉基准，辅助视觉大模型在手机端发来新老照片时精准“认亲”并沉淀新记忆 |
 | **连续消息防刷屏合并处理逻辑** | [`integrations/wecom_bot/debounce_and_merge_handler.js`](integrations/wecom_bot/debounce_and_merge_handler.js) | 滑动防抖时间窗口设计，解决微信交流中连发短句、连续传图被机器人一条条机械刷屏回复的行业痛点 |
 | **高可用防死循环语音合成引擎** | [`integrations/wecom_bot/memorial_tts.py`](integrations/wecom_bot/memorial_tts.py) | 内置语气词平滑、WAV 时长四级自检回退、FFmpeg 物理硬熔断与 opencore-amrnb 原生微信 12.2k 格式封包 |
@@ -128,7 +129,7 @@ flowchart TD
   - 不止于 WebUI！提供完整的[企业自建应用接入指南](docs/WECOM_BOT_DEPLOY_GUIDE.md)。
   - **连续消息防刷屏合并（Debounce）**：一次发来多张照片或短句时，智能等待后合并为 1~2 句温和回复。
   - **多模态老照片视觉锚点**：依托[视觉底座相册规范](integrations/wecom_bot/visual_memory_anchor.md)，准确识别老照片中的家人并唤起对应年代回忆。
-- **动态家庭 IP 免疫**：依托 Cloudflare 永久安全隧道，无惧家庭宽带 IP 变动，免开放家庭路由器端口。
+- **动态家庭 IP 免疫**：依托 Cloudflare 永久安全隧道（主动向外出站长连接），无惧家庭宽带 IP 变动，免开放家庭路由器任何端口，详见 [Cloudflare 稳定对外服务管道搭建指南](docs/CLOUDFLARE_TUNNEL_PIPELINE_GUIDE.md)。
 
 ---
 
