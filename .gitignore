@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+.venv/
+env/
+venv/
+ENV/
+
+# IDE & Editor
+.vscode/
+.idea/
+
+# Sensitive data, databases, and keys (CRITICAL PRIVACY & OVERSIZED DATA)
+all_keys.json
+decrypted/
+MEMORY.md
+SOUL.md
+family_photos_README.md
+family_photos/
+voice_ref/
+scripts/telegram_bot/
+
+# Exclude entire data contents
+data/**
+!data/raw/
+!data/raw/.gitkeep
+!data/processed/
+!data/processed/.gitkeep
+!data/memory/
+!data/memory/.gitkeep
+
+# Sensitive config with API keys
+config/config.yaml
+config/config.json
+
+# Audio, media, database, and model binaries
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+*.wav
+*.mp3
+*.silk
+*.aud
+*.aac
+*.m4a
+*.pth
+*.pt
+*.bin
+*.onnx
+*.ckpt
+*.amr
+
+# OS & Logs
+.DS_Store
+Thumbs.db
+*.log

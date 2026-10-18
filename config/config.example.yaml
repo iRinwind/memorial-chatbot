@@ -1,0 +1,54 @@
+# =======================================================
+# 绿色聊天软件数字人记忆与克隆系统配置文件
+# =======================================================
+
+project:
+  name: "GreenChat Memorial Bot"
+  version: "1.0.0"
+  memorial_name: "张长生"       # 纪念对象称谓（如：父亲、母亲、好友）
+  memorial_relation: "父亲"
+  user_name: "小明"             # 对话者称谓
+
+# 数据路径配置
+paths:
+  data_raw_dir: "data/raw"
+  data_processed_dir: "data/processed"
+  memory_dir: "data/memory"
+  audio_clean_dir: "data/processed/audio_clean"
+  database_file: "data/memory/vector_db"
+
+# LLM 对话模型配置 (支持标准协议，无缝接入 DeepSeek, Gemini, Qwen, Ollama 本地模型等)
+llm:
+  provider: "openai_compatible" # 可选: openai_compatible, gemini_native, ollama
+  api_key: "YOUR_API_KEY"
+  base_url: "https://api.deepseek.com/v1" # 或 https://api.openai.com/v1, http://localhost:11434/v1
+  model: "deepseek-chat" # 或 gemini-2.5-flash, qwen-max, etc.
+  temperature: 0.6
+  max_tokens: 512
+
+# 声音克隆与合成服务配置 (TTS)
+tts:
+  enabled: true
+  provider: "gpt_sovits" # 可选: gpt_sovits (本地开源), cosyvoice, minimax_api, mock
+  # 本地 GPT-SoVITS API 配置 (通常部署在本地 9880 端口或局域网服务器)
+  gpt_sovits:
+    api_url: "http://127.0.0.1:9880"
+    ref_audio_path: "data/processed/voice_reference/sample_ref.wav"
+    ref_audio_text: "参考音频对应的文字标注"
+    language: "zh"
+  # 云端 API 备用 (MiniMax / ElevenLabs)
+  minimax:
+    group_id: ""
+    api_key: ""
+    voice_id: ""
+
+# 双向机器人网关接入配置
+bot:
+  platform: "web_ui" # 可选: web_ui (本地双向气泡测试), wecom_agent (绿色办公软件原生自建应用机器人)
+  wecom:
+    corp_id: "ww_your_corpid"
+    agent_id: 1000002
+    secret: "your_agent_secret"
+    token: "your_webhook_token"
+    encoding_aes_key: "your_encoding_aes_key"
+    auto_reply_voice: true

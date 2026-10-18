@@ -1,0 +1,50 @@
+{
+  "project": {
+    "name": "GreenChat Memorial Bot",
+    "version": "1.0.0",
+    "memorial_name": "张长生",
+    "memorial_relation": "父亲",
+    "user_name": "小明"
+  },
+  "paths": {
+    "data_raw_dir": "data/raw",
+    "data_processed_dir": "data/processed",
+    "memory_dir": "data/memory",
+    "audio_clean_dir": "data/processed/audio_clean",
+    "database_file": "data/memory/vector_db"
+  },
+  "llm": {
+    "provider": "openai_compatible",
+    "api_key": "YOUR_API_KEY",
+    "base_url": "https://api.deepseek.com/v1",
+    "model": "deepseek-chat",
+    "temperature": 0.6,
+    "max_tokens": 512
+  },
+  "tts": {
+    "enabled": true,
+    "provider": "mock",
+    "gpt_sovits": {
+      "api_url": "http://127.0.0.1:9880",
+      "ref_audio_path": "data/processed/voice_reference/sample_ref.wav",
+      "ref_audio_text": "参考音频对应的文字标注",
+      "language": "zh"
+    },
+    "minimax": {
+      "group_id": "",
+      "api_key": "",
+      "voice_id": ""
+    }
+  },
+  "bot": {
+    "platform": "web_ui",
+    "wecom": {
+      "corp_id": "ww_your_corpid",
+      "agent_id": 1000002,
+      "secret": "your_agent_secret",
+      "token": "your_webhook_token",
+      "encoding_aes_key": "your_encoding_aes_key",
+      "auto_reply_voice": true
+    }
+  }
+}

@@ -1,0 +1,22 @@
+# Python 基础依赖
+pyyaml>=6.0
+pydantic>=2.0
+python-dotenv>=1.0.0
+tqdm>=4.65.0
+requests>=2.31.0
+
+# 数据库与数据清洗
+pandas>=2.0.0
+numpy>=1.24.0
+
+# 大语言模型与记忆向量库 (支持动态选择 OpenAI 兼容接口 / Gemini / Ollama / DeepSeek)
+openai>=1.12.0
+chromadb>=0.4.22
+
+# Web 测试界面 (高仿微信风格私密对话面板)
+gradio>=4.20.0
+
+# 语音处理 (可选/按需引入)
+# pydub>=0.25.1
+# soundfile>=0.12.1
+
